@@ -10,7 +10,7 @@
   --platinum: hsl(0, 0%, 91%);
   --gainsboro: hsl(0, 0%, 90%);
   --red-salsa: hsl(0, 77%, 60%);
-  --din-gray: hsl(0, 77%, 39%);
+  --din-gray: hsl(0, 0%, 39%);
   --davys-gray: hsl(0, 0%, 30%);
   --spanish-gray: hsl(0, 0%, 62%);
   --quick-sliver: hsl(0, 0%, 64%);
@@ -48,7 +48,7 @@
 html {
   font-family: "Source Sans 3", sans-serif;
 }
-* {
+a {
   color: inherit;
   text-decoration: none;
 }
@@ -71,7 +71,7 @@ img {
 input {
   font: inherit;
   width: 100%;
-  /* border: none; */
+  border: none;
 }
 input:focus {
   outline: 2px solid var(--azure);
@@ -256,4 +256,119 @@ input::-webkit-inner-spin-button {
 }
 .btn-primary b {
   margin-right: 10px;
+}
+
+/* cart section style */
+
+.cart {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cart-item-box {
+  padding: 40px var(--px);
+  margin-bottom: auto;
+}
+.product-card:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.product-card .card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.card .product-img {
+  border-radius: var(--radius);
+}
+.card .detail .product-name {
+  font-weight: var(--fw-6);
+  font-size: var(--fs-15);
+  color: var(--din-gray);
+  margin-bottom: 10px;
+}
+.card .detail .wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.product-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.product-qty button {
+  background: var(--platinum);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-qty button:active,
+product-close-btn:active ion-icon {
+  transform: scale(0.95);
+}
+
+.product-qty button ion-icon {
+  --ionicon-stroke-width: 60px;
+  font-size: 10px;
+}
+.product-close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.product-close-btn ion-icon {
+  font-size: 25px;
+  color: var(--quick-sliver);
+}
+.product-close-btn:hover ion-icon {
+  color: var(--red-salsa);
+}
+
+.discount-token {
+  padding: 40px var(--px);
+  border-top: 1px solid var(--gainsboro);
+  border-bottom: 1px solid var(--gainsboro);
+}
+
+.wrapper-flex {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.wrapper-flex input {
+  padding: 12px 15px;
+  font-weight: var(--fw-6);
+  letter-spacing: 2px;
+}
+.btn-outline {
+  padding: 10px 25px;
+  border: 1px solid var(--azure);
+  color: var(--azure);
+}
+.btn-outline:hover {
+  background: var(--azure);
+  color: var(--white);
+}
+.amount {
+  padding: 40px var(--px);
+}
+
+.amount > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount > div:not(:last-child) {
+  margin-bottom: 10px;
+}
+.amount .total {
+  font-size: var(--fs-18);
+  font-weight: var(--fw-7);
+  color: var(--onyx);
 }
