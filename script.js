@@ -1,5 +1,7 @@
 "use strict";
 
+import cloneArrayBuffer from "lodash-es/_cloneArrayBuffer";
+
 // all initial elements
 
 const payAmountBtn = document.querySelector("#payAmount");
@@ -29,11 +31,15 @@ for (let i = 0; i < incrementbtn.length; i++) {
   decrementBtn[i].addEventListener("click", function () {
     // collect the value of "quantity" textContent,
     // based on click "decrement" button slibling.
+
     let decrement = Number(this.nextElementSibling.textContent);
+
     // minus "decrement" variable value by 1 based on consition
     decrement < 1 ? 1 : decrement--;
+
     // show the "decrement" variable value on "quantity" element
     // based on click "decrement" button sibling.
+
     this.nextElementSibling.textContent = decrement;
     totalCalc();
   });
@@ -42,6 +48,7 @@ for (let i = 0; i < incrementbtn.length; i++) {
 // function: for calculating total amount of product price
 const totalCalc = function () {
   // declare all initial variable
+
   const tax = 0.05;
   let subtotal = 0;
   let totalTax = 0;
@@ -52,6 +59,7 @@ const totalCalc = function () {
     subtotal +=
       Number(quantityElem[i].textContent) * Number(priceElem[i].textContent);
   }
+
   // show the "subtotal" variable value on "subtotalElem" element
   subtotalElem.textContent = subtotal.toFixed(2);
 
@@ -59,7 +67,7 @@ const totalCalc = function () {
   totalTax = subtotal * tax;
 
   // show the "totalTax" on "taxElem" element
-  taxElem.textContent = totalTax.toFixed(2);
+  taxElem.textContent = total.toFixed(2);
 
   // calculating the "total"
   total = subtotal + totalTax;
@@ -68,3 +76,5 @@ const totalCalc = function () {
   totalElem.textContent = total.toFixed(2);
   payAmountBtn.textContent = total.toFixed(2);
 };
+
+import cloneArrayBuffer from "lodash-es";

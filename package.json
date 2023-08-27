@@ -1,0 +1,19 @@
+{
+  "name": "shoppingcart",
+  "version": "1.0.0",
+  "description": "Ecommerce",
+  "main": "script.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Leonard Ibeh",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}
