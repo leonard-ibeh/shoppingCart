@@ -159,7 +159,7 @@ input::-webkit-inner-spin-button {
 .payment-method {
   display: flex;
   align-items: center;
-  gap: 70px;
+  gap: 30px;
   margin-bottom: 40px;
 }
 .payment-method .method {
@@ -205,7 +205,6 @@ input::-webkit-inner-spin-button {
   padding: 10px 15px;
   font-size: var(--fs-18);
   font-weight: var(--fw-5);
-  border: none;
 }
 .cardholder-name,
 .card-number {
@@ -277,7 +276,7 @@ input::-webkit-inner-spin-button {
 .product-card .card {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 .card .product-img {
@@ -371,4 +370,76 @@ product-close-btn:active ion-icon {
   font-size: var(--fs-18);
   font-weight: var(--fw-7);
   color: var(--onyx);
+}
+
+/*  *\
+#RESPONSIVE
+\*  */
+
+@media (max-width: 1200px) {
+  .item-flex {
+    flex-direction: column-reverse;
+  }
+  /* check-out section responsive */
+
+  .checkout {
+    width: 100%;
+    border-right: none;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+  /* cart section */
+  .cart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    border-bottom: 1px solid var(--gainsboro);
+  }
+  .cart .wrapper {
+    margin-top: auto;
+  }
+  .cart .cart-item-box {
+    border-right: 1px solid var(--gainsboro);
+    margin-bottom: 0;
+  }
+  .discount-token {
+    border-top: none;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --px: 40px;
+  }
+  .cart {
+    grid-template-columns: 1fr;
+  }
+  .discount-token {
+    border-top: 1px solid var(--gainsboro);
+  }
+  .wrapper-flex {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 567px) {
+  :root {
+    --px: 20px;
+  }
+  .payment-method,
+  .input-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .payment-method .method {
+    width: 100%;
+  }
+  .input-flex .expire-date,
+  .input-flex .cvv {
+    width: 100%;
+  }
+  .expire-date .input-flex {
+    flex-direction: row;
+  }
 }
